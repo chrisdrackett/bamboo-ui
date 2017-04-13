@@ -9,6 +9,12 @@
 .status-bar {
   font-size: @font-size;
   color: @text-color;
-  border-top: 1px solid @base-border-color;
-  background-color: @tree-view-background-color;
+
+  box-shadow: 0px 1px 0px rgba(255,255,255,.75) inset;
+
+  // border-top: 1px solid @base-border-color;
+
+  background: linear-gradient(to bottom, @tool-bar-top 0%, @tool-bar-bottom 100%);
+
+  height: @title-bar-height;
 }
