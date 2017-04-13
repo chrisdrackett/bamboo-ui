@@ -6,15 +6,21 @@
 // Displays information about the current editor.
 // Overrides: atom/status-bar
 
-.status-bar {
-  font-size: @font-size;
-  color: @text-color;
+atom-panel-container.bottom {
+  atom-panel.bottom {
+    // background-color: transparent;
 
-  box-shadow: 0px 1px 0px rgba(255,255,255,.75) inset;
+    .status-bar {
+      transition: transform 0.2s ease-in-out;
 
-  // border-top: 1px solid @base-border-color;
+      background-color: white;
+      border-top: 1px solid @base-border-color;
 
-  background: linear-gradient(to bottom, @tool-bar-top 0%, @tool-bar-bottom 100%);
+      transform: translate3d(0, 100%, 0);
+    }
 
-  height: @title-bar-height;
+    &:hover .status-bar {
+      transform: translate3d(0, 0, 0);
+    }
+  }
 }

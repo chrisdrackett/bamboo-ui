@@ -1,21 +1,8 @@
-atom-panel.left.tool-panel {
-  position: relative;
-
+.tool-bar {
   width: @tool-bar-width;
 
-  background-color: #4d4d4d;
-}
-
-.tool-bar {
-  position: absolute;
-  top: @title-bar-height;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
   border: none;
-
-  background: none;
+  background: linear-gradient(to bottom, @tool-bar-top 0%, @tool-bar-bottom 100%);
 
   &:before, &:after {
     box-shadow: none !important;
