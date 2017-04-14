@@ -1,71 +1,91 @@
-.list-tree {
-  .icon {
+.list-tree .icon,
+.tab .default-icon,
+.tab .title,
+.tab .icon {
+  position: relative;
+
+  &:before {
+    display: inline-block;
     position: relative;
+    left: -2px;
+    top: 3px;
 
-    &::before {
-      position: relative;
-      left: -2px;
-      top: 3px;
+    width: 16px;
+    height: 16px;
 
-      background-size: contain;
-      background-position: center;
-      background-repeat:  no-repeat;
-      content: "";
+    margin-right: 5px;
 
-      -webkit-filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.15));
-    }
+    background-size: contain;
+    background-position: center;
+    background-repeat:  no-repeat;
+    content: "";
 
-    &.icon-file-directory::before {
-      background-image: url("atom://bamboo-ui/assets/Folder.svg");
-    }
-
-    &:before {
-      background-image: url("atom://bamboo-ui/assets/Generic.svg");
-    }
-
-    &[data-name$=".svg"]:before,
-    &[data-name$=".png"]:before,
-    &[data-name$=".jpg"]:before,
-    &[data-name$=".gif"]:before,
-    &[data-name$=".ico"]:before,
-    &[data-name$=".sketch"]:before {
-      background-image: url("atom://bamboo-ui/assets/Image.svg");
-    }
-
-    &[data-name$=".less"]:before,
-    &[data-name$=".sass"]:before,
-    &[data-name$=".css"]:before,
-    &[data-name$=".scss"]:before {
-      background-image: url("atom://bamboo-ui/assets/Style.svg");
-    }
-
-    &[data-name$=".md"]:before,
-    &[data-name$=".txt"]:before,
-    &[data-name$=".rtf"]:before, {
-      background-image: url("atom://bamboo-ui/assets/Text.svg");
-    }
-
-    &[data-name$=".js"]:before,
-    &[data-name$=".jsx"]:before,
-    &[data-name$=".py"]:before, {
-      background-image: url("atom://bamboo-ui/assets/Code.svg");
-    }
-
-    &[data-name$=".html"]:before {
-      background-image: url("atom://bamboo-ui/assets/Template.svg");
-    }
-
-    &[data-name$=".test.js"]:before {
-      background-image: url("atom://bamboo-ui/assets/Test.svg");
-    }
-
-    &[data-name$=".gitignore"]:before,
-    &[data-name$=".config.js"]:before,
-    &[data-name*=".eslintrc"]:before,
-    &[data-name$=".yml"]:before,
-    &[data-name*=".env"]:before,
-    &[data-name*=".lock"]:before {
-      background-image: url("atom://bamboo-ui/assets/Settings.svg");
-    }
+    -webkit-filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.15));
   }
+
+  &.icon-file-directory:before {
+    background-image: url("atom://bamboo-ui/assets/Folder.svg");
+  }
+
+  &:before {
+    background-image: url("atom://bamboo-ui/assets/Generic.svg");
+  }
+
+  &.icon-tools:before {
+    background-image: url("atom://bamboo-ui/assets/Tools.svg");
+  }
+
+  &[data-name$=".svg"]:before,
+  &[data-name$=".png"]:before,
+  &[data-name$=".jpg"]:before,
+  &[data-name$=".gif"]:before,
+  &[data-name$=".ico"]:before,
+  &[data-name$=".sketch"]:before {
+    background-image: url("atom://bamboo-ui/assets/Image.svg");
+  }
+
+  &[data-name$=".less"]:before,
+  &[data-name$=".sass"]:before,
+  &[data-name$=".css"]:before,
+  &[data-name$=".scss"]:before {
+    background-image: url("atom://bamboo-ui/assets/Style.svg");
+  }
+
+  &[data-name$=".md"]:before,
+  &[data-name$=".txt"]:before,
+  &[data-name$=".rtf"]:before, {
+    background-image: url("atom://bamboo-ui/assets/Text.svg");
+  }
+
+  &[data-name$=".js"]:before,
+  &[data-name$=".jsx"]:before,
+  &[data-name$=".py"]:before, {
+    background-image: url("atom://bamboo-ui/assets/Code.svg");
+  }
+
+  &[data-name$=".html"]:before {
+    background-image: url("atom://bamboo-ui/assets/Template.svg");
+  }
+
+  &[data-name$=".test.js"]:before {
+    background-image: url("atom://bamboo-ui/assets/Test.svg");
+  }
+
+  &[data-name$=".gitignore"]:before,
+  &[data-name$=".config.js"]:before,
+  &[data-name*=".eslintrc"]:before,
+  &[data-name$=".yml"]:before,
+  &[data-name*=".env"]:before,
+  &[data-name*=".lock"]:before,
+  &[data-name*=".cson"]:before {
+    background-image: url("atom://bamboo-ui/assets/Settings.svg");
+  }
+}
+
+.directory.status-added .icon-file-directory:before {
+  background-image: url("atom://bamboo-ui/assets/Folder_new.svg");
+}
+
+.directory.status-modified .icon-file-directory:before {
+  background-image: url("atom://bamboo-ui/assets/Folder_mod.svg");
 }
