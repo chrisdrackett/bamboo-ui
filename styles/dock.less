@@ -1,32 +1,52 @@
-// atom-dock {
-//
-//   .atom-dock-inner:not(.atom-dock-open){
-//     .atom-dock-mask {
-//       width: 0px !important;
-//     }
-//   }
-//
-//   .atom-dock-resize-handle {
-//
-//     position: absolute;
-//     z-index: 3;
-//
-//     // background-color: red;
-//
-//     &.left {
-//       top: 0;
-//       bottom: 0;
-//       right: 0;
-//
-//       border-right: 1px solid @base-border-color;
-//     }
-//
-//     &.right {
-//       top: 0;
-//       bottom: 0;
-//       left: 0;
-//
-//       border-left: 1px solid @base-border-color;
-//     }
-//   }
-// }
+atom-dock {
+  .atom-dock-inner:not(.atom-dock-open){
+    .atom-dock-mask {
+      width: 0px !important;
+    }
+  }
+
+  .atom-dock-resize-handle {
+     position: absolute;
+     z-index: 3;
+
+    &.left {
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      border-right: 1px solid @base-border-color;
+    }
+
+    &.right {
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      border-left: 1px solid @base-border-color;
+    }
+  }
+  
+  .atom-dock-toggle-button.left {
+    .atom-dock-toggle-button-inner.left {
+      transform: translateX(0);
+      
+      background-color: transparent;
+      border-color: transparent;
+      
+      .icon-chevron-left, .icon-chevron-right {
+        background-color: rgba(0,0,0,0.3);
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+                
+        &:hover {
+          background-color: rgba(0,0,0,0.6);
+        }
+        
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+}
