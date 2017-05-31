@@ -1,26 +1,28 @@
-
 // Status Bar
 // -------------------
-
 // Located at the bottom.
 // Displays information about the current editor.
 // Overrides: atom/status-bar
 
-// atom-panel-container.bottom {
-//   atom-panel.bottom {
-//     // background-color: transparent;
-//
-//     .status-bar {
-//       transition: transform 0.2s ease-in-out;
-//
-//       background-color: white;
-//       border-top: 1px solid @base-border-color;
-//
-//       transform: translate3d(0, 100%, 0);
-//     }
-//
-//     &:hover .status-bar {
-//       transform: translate3d(0, 0, 0);
-//     }
-//   }
-// }
+.status-bar {
+  font-size: @font-size;
+  color: @text-color;
+
+  height: 40px;
+
+  background: linear-gradient(to bottom, @tool-bar-top 0%, @tool-bar-bottom 100%);
+
+  box-shadow: 0 1px 0 rgba(255,255,255,0.75) inset;
+
+  .flexbox-repaint-hack {
+    align-items: center;
+  }
+
+  .file-info, .line-ending-tile, .encoding-status, .git-status, .cursor-position {
+    display: none;
+  }
+
+  status-bar-blame {
+    margin-right: 10px;
+  }
+}
