@@ -5,33 +5,17 @@
 // Used to explore and open files in the current project.
 // Overrides: atom/tree-view
 
-
-.tree-view-scroller {
-  overflow: hidden;
-}
-
-.tree-view-resizer {
-  padding-top: @title-bar-height;
-
-  border-right: 1px solid #c4c4c4;
-}
-
-.tree-view-wrapper {
-  display: flex;
-  flex-direction: column;
-
-  flex-shrink: 1;
-}
-
-.tree-view-panes {
-  flex-shrink: 0;
-
-  border-bottom: 1px solid @tree-view-internal-border-color;
+.atom-dock-content-wrapper.left {
+  // hide the pane tab
+  .tab-bar {
+    display: none;
+  }
 }
 
 .tree-view {
   position: relative;
-  flex-shrink: 1;
+
+  overflow: hidden;
 
   margin-top: @title-bar-height;
 
@@ -39,7 +23,7 @@
 
   &:before {
     position: fixed;
-    content: "Project";
+    content: "";
     height: @title-bar-height;
 
     margin-top: -28px;
@@ -47,8 +31,37 @@
   }
 }
 
-.list-tree {
+
+.tree-view-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.tree-view-panes {
+  flex-shrink: 0;
+
+  border-bottom: 1px solid @tree-view-internal-border-color;
+
+  .list-item:hover, .list-item.selected {
+    &.status-modified, &.status-added, &.modified {
+      .icon:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.tree-view-wrapper .full-menu.list-tree,
+.tree-view-wrapper .tree-view-panes.list-tree {
   overflow: auto;
+  position: relative;
+
+  padding-left: 0;
+  padding-right: 0;
+  padding-left: 5px;
+  padding-right: 10px;
 
   .list-item {
     color: @text-color;
