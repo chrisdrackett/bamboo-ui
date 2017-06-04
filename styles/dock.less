@@ -1,4 +1,15 @@
 atom-dock {
+  @handle-width: 8px;
+  @handle-height: 40px;
+
+  overflow: visible;
+
+  .atom-dock-mask {
+    background-color: @ui-background;
+
+    overflow: visible;
+  }
+
   .atom-dock-inner:not(.atom-dock-open){
     .atom-dock-mask {
       width: 0px !important;
@@ -24,28 +35,44 @@ atom-dock {
 
       border-left: 1px solid @base-border-color;
     }
+
+    &.bottom {
+      top: 0;
+      right: 0;
+      left: 0;
+
+      border-left: 1px solid @base-border-color;
+    }
   }
-  
-  .atom-dock-toggle-button.left {
-    .atom-dock-toggle-button-inner.left {
+
+  .atom-dock-toggle-button  {
+    .atom-dock-toggle-button-inner {
       transform: translateX(0);
-      
+
       background-color: transparent;
       border-color: transparent;
-      
-      .icon-chevron-left, .icon-chevron-right {
+
+      .icon {
         background-color: rgba(0,0,0,0.3);
-        width: 8px;
-        height: 40px;
         border-radius: 4px;
-                
+
         &:hover {
           background-color: rgba(0,0,0,0.6);
         }
-        
+
         &:before {
           content: none;
         }
+      }
+
+      .icon-chevron-left, .icon-chevron-right {
+        width: 8px;
+        height: 40px;
+      }
+
+      .icon-chevron-down {
+        height: 8px;
+        width: 40px;
       }
     }
   }
