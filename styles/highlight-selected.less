@@ -7,3 +7,19 @@
 .minimap .highlight-selected.selected {
   background: red;
 }
+
+.bracket-matcher .region {
+  border-bottom: 1px solid @primary;
+}
+
+atom-text-editor {
+  .highlight-selected .region.region.region {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid @primary;
+  }
+  [class="highlight highlight-selected background"] .region.region.region, // TODO: <- Remove when fixed in Core, currently background -> syntax--background
+  .highlight-selected.background .region.region {
+    background-color: @syntax-result-marker-color;
+  }
+}
