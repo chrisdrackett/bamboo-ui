@@ -1,24 +1,29 @@
+.editor:not(.mini) {
+  @padding: 12px;
 
-// Mini Editor
-// -------------------
+  .gutter-container {
+    padding-left: @padding;
+    overflow: visible;
 
-// Mini Editors are the "text inputs" used in find+replace or in the settings.
-
-
-atom-text-editor[mini] {
-  padding-left: @component-padding/2;
-  color: @text-color;
-  border-radius: @component-border-radius;
-  background-color: @input-background-color;
-
-  &.is-focused {
-    background-color: darken(@input-background-color, 5%);
+    .gutter {
+      padding-top: @padding;
+    }
   }
 
-  .placeholder-text {
-    color: @text-color-subtle;
+  .scroll-view {
+    padding-top: @padding;
+
+    // we move the editor and cursor over a bit
+    // so the cursor does not get cut off on the left.
+    margin-left: 1px;
   }
-  .selection .region {
-    background-color: @background-color-selected;
+
+  atom-overlay {
+    margin-top: @padding;
+    margin-left: 1px;
+  }
+
+  .indent-guide-improved {
+    margin-top: @padding;
   }
 }
