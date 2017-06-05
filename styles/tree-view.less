@@ -10,93 +10,93 @@
   .tab-bar {
     display: none;
   }
-}
 
-.tree-view {
-  position: relative;
+  .tree-view {
+    position: relative;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  border-top: 1px solid @tree-view-internal-border-color;
+    border-top: 1px solid @tree-view-internal-border-color;
 
-  &:before {
-    position: fixed;
-    content: "";
-    height: @title-bar-height;
+    &:before {
+      position: fixed;
+      content: "";
+      height: @title-bar-height;
 
-    margin-top: -28px;
-    margin-left: 5px;
-  }
-}
-
-.tree-view-wrapper {
-  display: flex;
-  flex-direction: column;
-
-  height: 100%;
-}
-
-.list-tree {
-  overflow: auto;
-  position: relative;
-
-  padding-left: 0;
-  padding-right: 0;
-  padding-left: 5px;
-  padding-right: 10px;
-
-  .list-item {
-    color: @text-color;
-
-    &.status-modified {
-      .icon:after {
-        position: absolute;
-        content: "";
-
-        width: 6px;
-        height: 6px;
-        background-color: @text-color-warning;
-
-        border-radius: 50%;
-
-        left: -14px;
-        top: 3px;
-      }
-    }
-
-    &.status-added {
-      .icon:after {
-        position: absolute;
-
-        font-family: 'Octicons Regular';
-        content: "\f05d";
-
-        width: 6px;
-        height: 6px;
-        color: @text-color-success;
-
-        left: -15px;
-        top: -6px;
-      }
+      margin-top: -28px;
+      margin-left: 5px;
     }
   }
 
-  .list-item.selected {
-    color: @text-color-selected;
+  .tree-view-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
   }
-}
 
-// Tree View Pane
+  .list-tree {
+    overflow: auto;
+    position: relative;
 
-.tree-view-panes {
-  flex-shrink: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-left: 5px;
+    padding-right: 10px;
 
-  border-bottom: 1px solid @tree-view-internal-border-color;
+    .list-item {
+      color: @text-color;
 
-  .list-item:hover, .list-item.selected {
-    &.status-modified, &.status-added, &.modified {
-      .icon:after {
-        display: none;
+      &.status-modified {
+        .icon:after {
+          position: absolute;
+          content: "";
+
+          width: 6px;
+          height: 6px;
+          background-color: @text-color-warning;
+
+          border-radius: 50%;
+
+          left: -14px;
+          top: 3px;
+        }
+      }
+
+      &.status-added {
+        .icon:after {
+          position: absolute;
+
+          font-family: 'Octicons Regular';
+          content: "\f05d";
+
+          width: 6px;
+          height: 6px;
+          color: @text-color-success;
+
+          left: -15px;
+          top: -6px;
+        }
+      }
+    }
+
+    .list-item.selected {
+      color: @text-color-selected;
+    }
+  }
+
+  // Tree View Pane
+
+  .tree-view-panes {
+    flex-shrink: 0;
+
+    border-bottom: 1px solid @tree-view-internal-border-color;
+
+    .list-item:hover, .list-item.selected {
+      &.status-modified, &.status-added, &.modified {
+        .icon:after {
+          display: none;
+        }
       }
     }
   }
