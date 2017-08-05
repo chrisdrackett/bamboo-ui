@@ -12,6 +12,10 @@
 
   background: linear-gradient(to bottom, @tool-bar-top 0%, @tool-bar-bottom 100%);
 
+  body.is-blurred & {
+    background: #f8f9f8;
+  }
+
   box-shadow: 0 1px 0 rgba(255,255,255,0.75) inset;
 
   .flexbox-repaint-hack {
@@ -22,6 +26,55 @@
     display: none;
   }
 
+  // Linter
+  .linter-status-count {
+    display: inline-flex;
+
+    margin: @space/4;
+
+    border-radius: @radius;
+
+    background: linear-gradient(to bottom, #fbfbfb 0%, #f4f3f4 100%);
+
+    box-shadow: 0 1px 0px rgba(255,255,255,0.5) inset, 0 1px 1px rgba(0,0,0,0.075), 0 1px 3px rgba(0,0,0,0.1);
+
+    body.is-blurred & {
+      margin: @space/4 - 1;
+      border: 1px solid #d9d8d9;
+      background: #f8f9f8;
+      box-shadow: none;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      padding: 3px 5px;
+
+      line-height: 16px;
+
+      .icon {
+        margin-top: -2px;
+        margin-right: 1px;
+        margin-left: 2px;
+      }
+
+      &:first-child {
+        border-right: 1px solid @tree-view-internal-border-color;
+      }
+      &:last-child {
+        margin-right: 2px;
+        border-left: 1px solid @tree-view-internal-border-color;
+      }
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Blame Info
   status-bar-blame {
     margin-right: 10px;
   }
