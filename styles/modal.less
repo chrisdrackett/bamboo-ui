@@ -8,18 +8,15 @@ atom-panel.modal.from-top {
 }
 
 
-atom-panel.modal {
+atom-panel.modal, .popover-list {
+  padding: @space/2;
   border-radius: @radius * 1.5;
 
   background-color: @base-background-color;
-  box-shadow: 0 0 2px rgba(0,0,0,0.4), 0 4px 18px rgba(0,0,0,0.3);
+  box-shadow: @modal-shadow;
 
   atom-text-editor, atom-text-editor.is-focused {
     background-color: @base-background-color;
-  }
-
-  .loading {
-    display: none;
   }
 
   .two-lines {
@@ -36,11 +33,6 @@ atom-panel.modal {
     .secondary-line {
       color: @text-color-subtle;
       margin-left: 6px;
-    }
-
-    .character-match {
-      color: inherit;
-      font-weight: inherit;
     }
 
     &.selected {
@@ -66,6 +58,11 @@ atom-panel.modal {
     .key-binding {
       background: white;
     }
+  }
+
+  .character-match {
+    color: inherit !important;
+    font-weight: inherit !important;
   }
 
   .status {
