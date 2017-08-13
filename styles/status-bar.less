@@ -22,7 +22,8 @@
     align-items: center;
   }
 
-  .file-info, .line-ending-tile, .encoding-status, .git-status, .cursor-position {
+  .file-info, .line-ending-tile, .encoding-status, .git-status, .cursor-position, status-bar-selection,
+  .highlight-selected-status, .github-PushPull, .github-ChangedFilesCount {
     display: none;
   }
 
@@ -31,6 +32,8 @@
     display: inline-flex;
 
     margin: @space/4;
+
+    margin-right: 12px;
 
     border-radius: @radius;
 
@@ -71,6 +74,15 @@
         cursor: pointer;
         text-decoration: none;
       }
+    }
+  }
+
+  // Grammer
+  grammar-selector-status {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
     }
   }
 

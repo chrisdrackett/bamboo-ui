@@ -8,13 +8,12 @@ atom-workspace-axis {
   .wrap-guide {
     top: -@padding;
   }
-
   .gutter-container {
     padding-left: @padding;
     overflow: visible;
 
     .gutter {
-      padding-top: @padding;
+      margin-top: @padding;
 
       .line-number {
         padding-left: @padding;
@@ -34,8 +33,38 @@ atom-workspace-axis {
     margin-top: @padding;
     margin-left: 1px;
   }
-
   .indent-guide-improved {
     margin-top: @padding;
   }
 }
+
+// This seems like a better way to handle this, but because it overwrites the contain style odd things happen when you click around.
+
+// atom-text-editor:not(.mini) {
+//   @padding: 12px;
+//
+//   padding: @padding;
+//   padding-right: 0;
+//
+//   overflow: hidden;
+//   contain: strict;
+//
+//   > div, .scroll-view {
+//     overflow: visible !important;
+//     contain: none !important;
+//   }
+//
+//   atom-text-editor-minimap {
+//     margin-top: -@padding;
+//   }
+//
+//   .gutter .line-number {
+//     padding-left: @padding;
+//   }
+//
+//   .wrap-guide {
+//     top: -@padding;
+//     bottom: -@padding;
+//     height: auto;
+//   }
+// }

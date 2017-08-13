@@ -11,11 +11,16 @@
 body {
   font-size: @font-size;
   color: @text-color;
-  background-color: @app-background-color;
+  background-color: transparent;
+
+  &.is-blurred {
+    background-color: #f6f6f6;
+  }
+
 }
 
 atom-pane {
-  border-right: 1px solid @base-border-color;
+  border-right: 1px solid #cecece;
   &:last-child {
     border-right: none;
   }
