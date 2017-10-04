@@ -4,13 +4,31 @@
 // Displays information about the current editor.
 // Overrides: atom/status-bar
 
+atom-panel.bottom {
+  position: static;
+}
+
+atom-panel-container.top {
+  height: 40px;
+}
+
 .status-bar {
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
   font-size: @font-size;
   color: @text-color;
 
   height: 40px;
 
   background: linear-gradient(to bottom, @tool-bar-top 0%, @tool-bar-bottom 100%);
+
+  &:before {
+    content: ""
+
+  }
 
   body.is-blurred & {
     background: #f8f9f8;
