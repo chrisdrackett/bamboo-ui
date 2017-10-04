@@ -1,36 +1,41 @@
-.editor:not(.mini) {
-  @padding: 12px;
+.editor[tabindex="-1"]:not(.mini) {
+  // we only want the top level editor, not children.
+  // Maybe there is a better way to get this...
+  & > div {
+    @padding: 12px;
 
-  .wrap-guide {
-    top: -@padding;
-  }
-  .gutter-container {
-    padding-left: @padding;
-    overflow: visible;
+    .wrap-guide {
+      top: -@padding;
+    }
 
-    .gutter {
-      margin-top: @padding;
+    .gutter-container {
+      padding-left: @padding;
+      overflow: visible;
 
-      .line-number {
-        padding-left: @padding;
+      .gutter {
+        margin-top: @padding;
 
-        &.git-line-modified {
-          padding-left: @padding - 2px;
+        .line-number {
+          padding-left: @padding;
+
+          &.git-line-modified {
+            padding-left: @padding - 2px;
+          }
         }
       }
     }
-  }
 
-  .scroll-view {
-    padding-top: @padding;
+    .scroll-view {
+      padding-top: @padding;
 
-    // we move the editor and cursor over a bit
-    // so the cursor does not get cut off on the left.
-    margin-left: 1px;
-  }
+      // we move the editor and cursor over a bit
+      // so the cursor does not get cut off on the left.
+      margin-left: 1px;
+    }
 
-  .indent-guide-improved {
-    margin-top: @padding;
+    .indent-guide-improved {
+      margin-top: @padding;
+    }
   }
 }
 
