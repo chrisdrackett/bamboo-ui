@@ -1,7 +1,3 @@
-atom-workspace-axis {
-  overflow: hidden;
-}
-
 .editor:not(.mini) {
   @padding: 12px;
 
@@ -17,6 +13,10 @@ atom-workspace-axis {
 
       .line-number {
         padding-left: @padding;
+
+        &.git-line-modified {
+          padding-left: @padding - 2px;
+        }
       }
     }
   }
@@ -29,10 +29,6 @@ atom-workspace-axis {
     margin-left: 1px;
   }
 
-  atom-overlay {
-    margin-top: @padding;
-    margin-left: 1px;
-  }
   .indent-guide-improved {
     margin-top: @padding;
   }
