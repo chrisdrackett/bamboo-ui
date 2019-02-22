@@ -16,8 +16,13 @@ atom-workspace {
   linter-message .linter-message-item,    // copy/paste linter v1
   linter-message .linter-message-link,     // copy/paste linter v1
   .github-PaneView,
-  .styleguide
-  {
-     -webkit-app-region: no-drag;
+  .styleguide {
+    -webkit-app-region: no-drag;
+  }
+
+  // the tree view tab is special
+  .tab-bar .tab[data-type="TreeView"] {
+    -webkit-app-region: drag;
+    pointer-events: none;
   }
 }
