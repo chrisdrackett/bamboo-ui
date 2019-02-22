@@ -24,5 +24,18 @@ atom-workspace {
   .tab-bar .tab[data-type="TreeView"] {
     -webkit-app-region: drag;
     pointer-events: none;
+
+    .title {
+      text-indent: -9999px;
+      line-height: 0;
+
+      &:after {
+        display: block;
+        text-indent: 0;
+        line-height: initial;
+
+        content: "Bamboo";
+      }
+    }
   }
 }
