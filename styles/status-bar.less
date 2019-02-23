@@ -13,7 +13,7 @@ atom-panel-container.top {
 }
 
 .status-bar {
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -23,80 +23,48 @@ atom-panel-container.top {
 
   height: 40px;
 
-  background: linear-gradient(to bottom, @tool-bar-top 0%, @tool-bar-bottom 100%);
+  background: linear-gradient(
+    to bottom,
+    @tool-bar-top 0%,
+    @tool-bar-bottom 100%
+  );
 
   &:before {
-    content: ""
-
+    content: "";
   }
 
   body.is-blurred & {
     background: #f8f9f8;
   }
 
-  box-shadow: 0 1px 0 rgba(255,255,255,0.75) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75) inset;
 
   .flexbox-repaint-hack {
     align-items: center;
   }
 
-  .file-info, .line-ending-tile, .encoding-status, .git-status, .cursor-position, status-bar-selection,
-  .highlight-selected-status, .github-PushPull, .github-ChangedFilesCount {
+  .file-info,
+  .line-ending-tile,
+  .encoding-status,
+  .git-status,
+  .cursor-position,
+  status-bar-selection,
+  .highlight-selected-status,
+  .github-PushPull,
+  .github-ChangedFilesCount {
     display: none;
   }
 
-  // Linter
-  .linter-status-count {
-    display: inline-flex;
+  .flexbox-repaint-hack {
+    height: 100%;
 
-    margin: @space/4;
-
-    margin-right: 12px;
-
-    border-radius: @radius;
-
-    background: linear-gradient(to bottom, #fbfbfb 0%, #f4f3f4 100%);
-
-    box-shadow: 0 1px 0px rgba(255,255,255,0.5) inset, 0 1px 1px rgba(0,0,0,0.075), 0 1px 3px rgba(0,0,0,0.1);
-
-    body.is-blurred & {
-      margin: @space/4 - 1;
-
-      margin-right: 11px;
-
-      border: 1px solid #d9d8d9;
-      background: #f8f9f8;
-      box-shadow: none;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-
-      padding: 3px 5px;
-
-      line-height: 16px;
-
-      .icon {
-        margin-top: -2px;
-        margin-right: 1px;
-        margin-left: 2px;
-      }
-
-      &:first-child {
-        border-right: 1px solid @tree-view-internal-border-color;
-      }
-      &:last-child {
-        margin-right: 2px;
-        border-left: 1px solid @tree-view-internal-border-color;
-      }
-
-      &:hover {
-        cursor: pointer;
-        text-decoration: none;
-      }
+    .status-bar-left {
+      height: 100%;
     }
   }
+
+  // Linter
+  @import "linter";
 
   // Grammer
   grammar-selector-status {

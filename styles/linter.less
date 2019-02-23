@@ -1,0 +1,77 @@
+// Linter
+
+@status-bar-shadow: 0 1px 0px rgba(255, 255, 255, 0.5) inset,
+  0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.1);
+
+// Linter.. Hopefully ;)
+.status-bar-left {
+  display: flex;
+  align-items: center;
+
+  & .inline-block:first-child {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > span {
+      display: inline-flex;
+
+      margin: @space / 4;
+      margin-right: 12px;
+
+      border-radius: @radius;
+
+      background: linear-gradient(to bottom, #fbfbfb 0%, #f4f3f4 100%);
+
+      box-shadow: @status-bar-shadow;
+
+      body.is-blurred & {
+        margin: @space / 4 - 1;
+
+        margin-right: 11px;
+
+        border: 1px solid #d9d8d9;
+        background: #f8f9f8;
+        box-shadow: none;
+      }
+
+      a.diagnostics-status-bar-highlight {
+        display: flex;
+        align-items: center;
+
+        padding-right: 5px;
+
+        line-height: 16px;
+
+        .icon {
+          margin-top: 1px;
+          margin-right: 1px;
+          margin-left: 1px;
+        }
+
+        border-right: 1px solid @tree-view-internal-border-color;
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+        &:first-child {
+          border-top-left-radius: @radius;
+          border-bottom-left-radius: @radius;
+
+          border-left: none;
+        }
+
+        &:last-child {
+          border-top-right-radius: @radius;
+          border-bottom-right-radius: @radius;
+
+          margin-right: 2px;
+          border-right: none;
+        }
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
