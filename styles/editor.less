@@ -4,13 +4,12 @@
   & > div {
     @padding: 12px;
 
-    .wrap-guide {
-      top: -@padding;
-    }
-
     .gutter-container {
-      padding-left: @padding;
       overflow: visible;
+
+      .gutter:first-child {
+        padding-left: @padding;
+      }
 
       .gutter {
         margin-top: @padding;

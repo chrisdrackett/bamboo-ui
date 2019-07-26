@@ -1,63 +1,93 @@
-
 // Buttons
 // -------------------
 
 // Overrides: atom/atom/static/buttons.less
 
-
 .btn {
-  color: lighten(@text-color, 6%);
-  background-color: @button-background-color;
-  &:hover,
-  &:focus {
-    color: @text-color-highlight;
-    background-color: @button-background-color-hover;
-  }
-  &:active {
-    color: fade(@text-color-selected, 66%);
-    background-color: darken(@button-background-color, 2%);
-  }
-  &.selected {
-    color: @text-color-selected;
-    background-color: @button-background-color-selected;
-  }
+  border-radius: @radius;
+
   &:focus,
   &:focus:active {
     outline: none;
   }
 }
 
-
 // Colored buttons -----------------------
 
-.btn.btn-primary { .btn-color(@background-color-info); }
-.btn.btn-info    { .btn-color(@background-color-info); }
-.btn.btn-success { .btn-color(@background-color-success); }
-.btn.btn-warning { .btn-color(@background-color-warning); }
-.btn.btn-error   { .btn-color(@background-color-error); }
+.btn {
+  .btn-color(@base-background-color, @text-color);
+}
+.btn.btn-primary {
+  .btn-color(@background-color-info, darken(@background-color-info, 30%));
+}
+.btn.btn-info {
+  .btn-color(@background-color-info, darken(@background-color-info, 30%));
+}
+.btn.btn-success {
+  .btn-color(@background-color-success, darken(@background-color-success, 30%));
+}
+.btn.btn-warning {
+  .btn-color(@background-color-warning, darken(@background-color-warning, 30%));
+}
+.btn.btn-error {
+  .btn-color(@background-color-error, darken(@background-color-error, 30%));
+}
 
-.btn-color(@bg) {
-  color: @text-color-selected;
+.btn-color(@bg, @text-color) {
+  @box-shadow-color: darken(@bg, 10%);
+
+  transition: transform 0.1s, box-shadow 0.1s;
+
+  color: @text-color;
   background-color: @bg;
+  border: 1px solid;
+
+  border-color: darken(@bg, 20%);
+  box-shadow: 0 1px 0 @box-shadow-color;
+
+  transform: translate3d(0, -1px, 0);
+
   &:hover,
   &:focus {
-    background-color: lighten(@bg, 4%);
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 2px 0 @box-shadow-color;
   }
-  &:active {
-    background-color: darken(@bg, 4%);
-  }
+
+  &:active,
   &.selected {
-    background-color: lighten(@bg, 4%);
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 0 0 @box-shadow-color;
   }
-  &.selected:focus,
-  &.selected:hover {
-    background-color: lighten(@bg, 8%);
+
+  &:active {
+    background-color: darken(@button-background-color, 2%);
+  }
+
+  &.selected {
+    background-color: @button-background-color-selected;
+
+    &:hover {
+      transform: translate3d(0, -1px, 0);
+      box-shadow: 0 1px 0 @box-shadow-color;
+    }
+    &:active {
+      transform: translate3d(0, 0, 0);
+      box-shadow: 0 0 0 @box-shadow-color;
+    }
   }
 }
 
-
 // Button Group -----------------------
 
-.btn-group > .btn {
-  border-color: hsla(0,0%,0%,.2);;
+.btn-group {
+  & > .btn {
+    &:first-child,
+    &:first-child.selected {
+      border-left: 1px solid @base-border-color;
+    }
+    &:last-child,
+    &:last-child.selected {
+      border-right: 1px solid @base-border-color;
+    }
+  }
 }
