@@ -4,6 +4,7 @@
 &.icon-book,
 &.icon-repo,
 &.icon-file-symlink-file,
+&.icon-file-symlink-directory,
 .tab .title,
 .tab .icon {
   position: relative;
@@ -29,6 +30,10 @@
 
   &.icon-file-symlink-file:before {
     background-image: url("atom://bamboo-ui/assets/Symlink.svg");
+  }
+
+  &.icon-file-symlink-directory:before {
+    background-image: url("atom://bamboo-ui/assets/Folder_sym.svg");
   }
 
   &.icon-file-directory:before,
